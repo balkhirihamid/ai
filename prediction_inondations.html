@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="content">
+        <h1>L'IA dans la Prédiction des Inondations</h1>
+        
+        <div class="main-content">
+          <div class="left-column">
+            <div class="section-title">Systèmes d'Alerte Précoce</div>
+            <div class="feature-list">
+              <div class="feature-item">
+                <i class="fas fa-cloud-rain"></i>
+                <span>Analyse en temps réel des données météorologiques et hydrologiques.</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-brain"></i>
+                <span>Modèles prédictifs basés sur l'apprentissage automatique (Google Flood Hub).</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-map-marked-alt"></i>
+                <span>Cartographie dynamique des zones à risque.</span>
+              </div>
+            </div>
+            
+            <div class="section-title">Avantages des Prédictions par IA</div>
+            <div class="feature-list">
+              <div class="feature-item">
+                <i class="fas fa-clock"></i>
+                <span>Anticipation des inondations jusqu'à 7 jours à l'avance.</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-bullseye"></i>
+                <span>Précision accrue des prévisions.</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="right-column">
+            <div class="image-container">
+              <img src="images/lvgZO0NpCVeF.png" alt="Système de prédiction des inondations par IA" width="500" height="300">
+            </div>
+            
+            <div class="chart-container">
+              <canvas id="predictionAccuracyChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Chart for prediction accuracy comparison
+      const ctx = document.getElementById("predictionAccuracyChart").getContext("2d");
+      const predictionAccuracyChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: ["1 jour", "2 jours", "3 jours", "4 jours", "5 jours", "6 jours", "7 jours"],
+          datasets: [
+            {
+              label: "Méthodes traditionnelles",
+              data: [92, 85, 75, 65, 55, 45, 35],
+              backgroundColor: "rgba(0, 119, 182, 0.2)",
+              borderColor: "#0077b6",
+              borderWidth: 3,
+              tension: 0.3,
+              pointBackgroundColor: "#0077b6"
+            },
+            {
+              label: "Prédiction par IA",
+              data: [95, 92, 88, 83, 78, 72, 65],
+              backgroundColor: "rgba(0, 180, 216, 0.2)",
+              borderColor: "#00b4d8",
+              borderWidth: 3,
+              tension: 0.3,
+              pointBackgroundColor: "#00b4d8"
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: "top",
+              labels: {
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              }
+            },
+            title: {
+              display: true,
+              text: "Précision des prédictions d'inondations (%)",
+              font: {
+                family: "Roboto",
+                size: 18,
+                weight: "bold"
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: false,
+              min: 30,
+              max: 100,
+              ticks: {
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              },
+              title: {
+                display: true,
+                text: "Précision (%)",
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              }
+            },
+            x: {
+              ticks: {
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              },
+              title: {
+                display: true,
+                text: "Horizon de prévision",
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+

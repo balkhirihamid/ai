@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="conclusion-content">
+        <h1>Conclusion</h1>
+        
+        <div class="conclusion-main-content">
+          <div class="conclusion-left-column">
+            <div class="conclusion-section-title">Récapitulatif des Avantages de l'IA</div>
+            <div class="conclusion-feature-list">
+              <div class="conclusion-feature-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Optimisation de la gestion des ressources hydriques (-30% de pertes)</span>
+              </div>
+              <div class="conclusion-feature-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Amélioration de l'efficacité des traitements de pollution</span>
+              </div>
+              <div class="conclusion-feature-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Prédiction précise des inondations avec plusieurs jours d'avance</span>
+              </div>
+            </div>
+            
+            <div class="conclusion-section-title">Vers un Avenir Hydrique Durable</div>
+            <div class="conclusion-feature-list">
+              <div class="conclusion-feature-item">
+                <i class="fas fa-lightbulb"></i>
+                <span>Intégration des systèmes IA dans les politiques nationales</span>
+              </div>
+              <div class="conclusion-feature-item">
+                <i class="fas fa-globe"></i>
+                <span>Adaptation aux défis du changement climatique</span>
+              </div>
+            </div>
+            
+            <div class="quote-box">
+              <div class="quote-text">"L'intelligence artificielle représente une opportunité sans précédent pour transformer notre relation avec l'eau et assurer sa gestion durable."</div>
+            </div>
+          </div>
+          
+          <div class="conclusion-right-column">
+            <div class="conclusion-image-container">
+              <img src="images/YUDqRTDiJJHU.png" alt="IA pour la gestion durable de l'eau" width="500" height="280">
+            </div>
+            
+            <div class="conclusion-chart-container">
+              <canvas id="impactChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Chart for overall impact of AI on water management
+      const ctx = document.getElementById("impactChart").getContext("2d");
+      const impactChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Économie d'eau", "Réduction pollution", "Prévention inondations", "Économie énergie", "Durabilité"],
+          datasets: [{
+            label: "Impact potentiel de l'IA d'ici 2030 (%)",
+            data: [35, 45, 60, 30, 50],
+            backgroundColor: [
+              "#0077b6",
+              "#00b4d8",
+              "#90e0ef",
+              "#0077b6",
+              "#00b4d8"
+            ],
+            borderColor: [
+              "#03045e",
+              "#03045e",
+              "#03045e",
+              "#03045e",
+              "#03045e"
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: true,
+              position: "top",
+              labels: {
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              }
+            },
+            title: {
+              display: true,
+              text: "Impact potentiel de l'IA sur la gestion de l'eau",
+              font: {
+                family: "Roboto",
+                size: 18,
+                weight: "bold"
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 70,
+              ticks: {
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              },
+              title: {
+                display: true,
+                text: "Amélioration potentielle (%)",
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              }
+            },
+            x: {
+              ticks: {
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+

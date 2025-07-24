@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="content">
+        <h1>L'IA dans le Traitement et la Réduction de la Pollution</h1>
+        
+        <div class="main-content">
+          <div class="left-column">
+            <div class="section-title">Surveillance et Analyse de la Qualité</div>
+            <div class="feature-list">
+              <div class="feature-item">
+                <i class="fas fa-microscope"></i>
+                <span>Capteurs intelligents et analyse de données en temps réel pour détecter les contaminants.</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-exclamation-circle"></i>
+                <span>Détection précoce des anomalies et alertes automatiques.</span>
+              </div>
+            </div>
+            
+            <div class="section-title">Optimisation des Processus de Traitement</div>
+            <div class="feature-list">
+              <div class="feature-item">
+                <i class="fas fa-industry"></i>
+                <span>Stations d'épuration intelligentes avec ajustement automatique des dosages chimiques.</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-recycle"></i>
+                <span>Réduction des boues et valorisation des sous-produits du traitement.</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-bolt"></i>
+                <span>Optimisation énergétique des processus de traitement.</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="right-column">
+            <div class="image-container">
+              <img src="images/42mpuwkUVMfS.png" alt="Station de traitement des eaux usées intelligente" width="500" height="300">
+            </div>
+            
+            <div class="chart-container">
+              <canvas id="pollutionReductionChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Chart for pollution reduction efficiency with AI
+      const ctx = document.getElementById("pollutionReductionChart").getContext("2d");
+      const pollutionReductionChart = new Chart(ctx, {
+        type: "radar",
+        data: {
+          labels: ["Métaux lourds", "Nitrates", "Phosphates", "Microplastiques", "Produits pharmaceutiques", "Pesticides"],
+          datasets: [
+            {
+              label: "Traitement conventionnel",
+              data: [65, 70, 75, 40, 50, 60],
+              backgroundColor: "rgba(0, 119, 182, 0.2)",
+              borderColor: "#0077b6",
+              borderWidth: 2,
+              pointBackgroundColor: "#0077b6"
+            },
+            {
+              label: "Traitement optimisé par IA",
+              data: [85, 90, 92, 75, 80, 85],
+              backgroundColor: "rgba(0, 180, 216, 0.2)",
+              borderColor: "#00b4d8",
+              borderWidth: 2,
+              pointBackgroundColor: "#00b4d8"
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: "top",
+              labels: {
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              }
+            },
+            title: {
+              display: true,
+              text: "Efficacité d'élimination des polluants (%)",
+              font: {
+                family: "Roboto",
+                size: 18,
+                weight: "bold"
+              }
+            }
+          },
+          scales: {
+            r: {
+              angleLines: {
+                display: true
+              },
+              suggestedMin: 0,
+              suggestedMax: 100,
+              ticks: {
+                stepSize: 20,
+                font: {
+                  family: "Roboto",
+                  size: 12
+                }
+              },
+              pointLabels: {
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+

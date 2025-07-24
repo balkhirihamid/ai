@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="content">
+        <h1>L'IA dans la Gestion des Ressources Hydriques</h1>
+        
+        <div class="main-content">
+          <div class="left-column">
+            <div class="section-title">Optimisation de la Distribution</div>
+            <div class="feature-list">
+              <div class="feature-item">
+                <i class="fas fa-tint-slash"></i>
+                <span>Détection des fuites en temps réel grâce aux capteurs intelligents et algorithmes prédictifs</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-network-wired"></i>
+                <span>Optimisation des réseaux de distribution avec ajustement automatique des flux</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-tools"></i>
+                <span>Maintenance prédictive des infrastructures pour prévenir les défaillances</span>
+              </div>
+            </div>
+            
+            <div class="section-title">Prévision de la Demande</div>
+            <div class="feature-list">
+              <div class="feature-item">
+                <i class="fas fa-chart-bar"></i>
+                <span>Analyse des données historiques et météorologiques pour anticiper les besoins</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-seedling"></i>
+                <span>Gestion intelligente de l'irrigation agricole pour économiser jusqu'à 30% d'eau</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="right-column">
+            <div class="image-container">
+              <img src="images/SdwDszkkthBM.png" alt="Système de gestion intelligente de l'eau" width="500" height="300">
+            </div>
+            
+            <div class="chart-container">
+              <canvas id="waterSavingsChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Chart for water savings with AI implementation
+      const ctx = document.getElementById("waterSavingsChart").getContext("2d");
+      const waterSavingsChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Détection de fuites", "Optimisation des flux", "Irrigation intelligente", "Maintenance prédictive", "Gestion de la demande"],
+          datasets: [{
+            label: "Économies d'eau potentielles (%)",
+            data: [25, 15, 30, 10, 20],
+            backgroundColor: [
+              "#0077b6",
+              "#00b4d8",
+              "#90e0ef",
+              "#0077b6",
+              "#00b4d8"
+            ],
+            borderColor: [
+              "#03045e",
+              "#03045e",
+              "#03045e",
+              "#03045e",
+              "#03045e"
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: true,
+              position: "top",
+              labels: {
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              }
+            },
+            title: {
+              display: true,
+              text: "Économies d'eau potentielles avec l'IA",
+              font: {
+                family: "Roboto",
+                size: 18,
+                weight: "bold"
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 35,
+              ticks: {
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              },
+              title: {
+                display: true,
+                text: "Pourcentage d'économies (%)",
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              }
+            },
+            x: {
+              ticks: {
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="content">
+        <h1>Études de Cas et Applications Concrètes</h1>
+        
+        <div class="main-content">
+          <div class="left-column">
+            <div class="case-study">
+              <div class="case-title">
+                <i class="fas fa-map-marked-alt"></i>
+                <span>Google Flood Hub - Inde et Bangladesh</span>
+              </div>
+              <div class="case-description">
+                Système de prédiction des inondations basé sur l'IA pour des alertes précoces.
+              </div>
+              <div class="case-result">
+                Résultat: Protection de plus de 200 millions de personnes avec des prévisions jusqu'à 7 jours à l'avance.
+              </div>
+            </div>
+            
+            <div class="case-study">
+              <div class="case-title">
+                <i class="fas fa-tint"></i>
+                <span>Purecontrol - France</span>
+              </div>
+              <div class="case-description">
+                Optimisation des stations d'épuration par IA.
+              </div>
+              <div class="case-result">
+                Résultat: Réduction de 15% de la consommation énergétique et amélioration de 25% de la qualité des rejets.
+              </div>
+            </div>
+            
+            <div class="case-study">
+              <div class="case-title">
+                <i class="fas fa-faucet"></i>
+                <span>WADI - Espagne et Portugal</span>
+              </div>
+              <div class="case-description">
+                Système de détection des fuites dans les réseaux d'eau utilisant l'IA.
+              </div>
+              <div class="case-result">
+                Résultat: Réduction de 30% des pertes d'eau dans les zones pilotes.
+              </div>
+            </div>
+          </div>
+          
+          <div class="right-column">
+            <div class="image-container">
+              <img src="images/RMcvso6f8ZJm.png" alt="Google Flood Hub en action" width="500" height="300">
+            </div>
+            
+            <div class="chart-container">
+              <canvas id="impactChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Chart for impact of AI water management solutions
+      const ctx = document.getElementById("impactChart").getContext("2d");
+      const impactChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Économies d'eau", "Réduction d'énergie", "Amélioration qualité", "Réduction coûts", "Temps de réponse"],
+          datasets: [{
+            label: "Impact des solutions IA (% d'amélioration)",
+            data: [30, 25, 40, 20, 70],
+            backgroundColor: [
+              "#0077b6",
+              "#00b4d8",
+              "#90e0ef",
+              "#0077b6",
+              "#00b4d8"
+            ],
+            borderColor: [
+              "#03045e",
+              "#03045e",
+              "#03045e",
+              "#03045e",
+              "#03045e"
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: true,
+              position: "top",
+              labels: {
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              }
+            },
+            title: {
+              display: true,
+              text: "Impact des Solutions IA dans les Projets Réels",
+              font: {
+                family: "Roboto",
+                size: 18,
+                weight: "bold"
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 80,
+              ticks: {
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              },
+              title: {
+                display: true,
+                text: "Pourcentage d'amélioration (%)",
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              }
+            },
+            x: {
+              ticks: {
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="slide-container">
+      <div class="content">
+        <h1>Défis et Perspectives</h1>
+        
+        <div class="main-content">
+          <div class="left-column">
+            <div class="section-title">Défis Actuels</div>
+            <div class="feature-list">
+              <div class="feature-item">
+                <i class="fas fa-database"></i>
+                <span>Qualité et disponibilité des données.</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-server"></i>
+                <span>Infrastructure nécessaire pour le déploiement à grande échelle.</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-balance-scale"></i>
+                <span>Cadre réglementaire et éthique.</span>
+              </div>
+            </div>
+            
+            <div class="section-title">Perspectives d'Avenir</div>
+            <div class="feature-list">
+              <div class="feature-item">
+                <i class="fas fa-robot"></i>
+                <span>IA hybride combinant modèles physiques et apprentissage automatique.</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-globe-americas"></i>
+                <span>Systèmes intégrés de gestion à l'échelle des bassins versants.</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-users"></i>
+                <span>Démocratisation des outils d'aide à la décision.</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="right-column">
+            <div class="image-container">
+              <img src="images/SrSt3aAeiB3Q.png" alt="Défis et perspectives de l'IA dans la gestion de l'eau" width="500" height="300">
+            </div>
+            
+            <div class="chart-container">
+              <canvas id="adoptionChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Chart for AI adoption in water management
+      const ctx = document.getElementById("adoptionChart").getContext("2d");
+      const adoptionChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: ["2020", "2021", "2022", "2023", "2024", "2025", "2030"],
+          datasets: [
+            {
+              label: "Surveillance de la qualité",
+              data: [25, 30, 38, 45, 55, 65, 85],
+              borderColor: "#0077b6",
+              backgroundColor: "rgba(0, 119, 182, 0.1)",
+              tension: 0.3,
+              fill: true
+            },
+            {
+              label: "Prédiction des inondations",
+              data: [15, 22, 30, 42, 55, 70, 90],
+              borderColor: "#00b4d8",
+              backgroundColor: "rgba(0, 180, 216, 0.1)",
+              tension: 0.3,
+              fill: true
+            },
+            {
+              label: "Optimisation du traitement",
+              data: [10, 15, 25, 35, 48, 60, 80],
+              borderColor: "#90e0ef",
+              backgroundColor: "rgba(144, 224, 239, 0.1)",
+              tension: 0.3,
+              fill: true
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: "top",
+              labels: {
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              }
+            },
+            title: {
+              display: true,
+              text: "Adoption des technologies IA dans la gestion de l'eau (%)",
+              font: {
+                family: "Roboto",
+                size: 18,
+                weight: "bold"
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 100,
+              ticks: {
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              },
+              title: {
+                display: true,
+                text: "Taux d'adoption (%)",
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              }
+            },
+            x: {
+              ticks: {
+                font: {
+                  family: "Roboto",
+                  size: 14
+                }
+              }
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+
