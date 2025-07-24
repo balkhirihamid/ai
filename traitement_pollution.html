@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+     <div class="navigation">
+      <a class="b-l" href="gestion_ressources.html">
+        <span><i class="fas fa-play-circle" style="color: #fff; rotate: 180deg;"></i></span>
+      </a>
+      <a class="b-r" href="prediction_inondations.html">
+        <span><i class="fas fa-play-circle" style="color: #fff;"></i></span>
+      </a>
+    </div>
     <div class="slide-container">
       <div class="content">
         <h1>L'IA dans le Traitement et la Réduction de la Pollution</h1>
@@ -59,6 +67,10 @@
     </div>
     
     <script>
+      document.addEventListener("keydown", (e)=>{
+        if(e.keyCode == 39){ document.querySelector(".navigation .b-r").click()}
+        if(e.keyCode == 37){ document.querySelector(".navigation .b-l").click()}
+      })
       // Chart for pollution reduction efficiency with AI
       const ctx = document.getElementById("pollutionReductionChart").getContext("2d");
       const pollutionReductionChart = new Chart(ctx, {

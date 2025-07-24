@@ -272,4 +272,15 @@ h1 {
   margin-top: 10px;
 }
 
+.navigation i{
+  font-size: 30px;
+}
+.navigation{
+  justify-self: center;
+  width: 100%; display: flex; position:absolute; top: 60px; justify-content: space-between;
+  max-width: 1340px;
+}
+.navigation span{
+  height: 60px; z-index: 999; aspect-ratio: 1; background: #0cf; border-radius: 100%; display: flex; align-items: center; justify-content: center; padding: 4px;
+}
 

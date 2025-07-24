@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <div class="navigation">
+      <a class="b-l" href="defis_perspectives.html">
+        <span><i class="fas fa-play-circle" style="color: #fff; rotate: 180deg;"></i></span>
+      </a>
+      <a class="b-r" href="/">
+        <span ><i class="fas fa-play-circle" style="color: #fff;"></i></span>
+      </a>
+    </div>
     <div class="slide-container">
       <div class="conclusion-content">
         <h1>Conclusion</h1>
@@ -63,6 +71,11 @@
     </div>
     
     <script>
+
+      document.addEventListener("keydown", (e)=>{
+        if(e.keyCode == 39){ document.querySelector(".navigation .b-r").click()}
+        if(e.keyCode == 37){ document.querySelector(".navigation .b-l").click()}
+      })
       // Chart for overall impact of AI on water management
       const ctx = document.getElementById("impactChart").getContext("2d");
       const impactChart = new Chart(ctx, {
