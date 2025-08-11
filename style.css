@@ -6,7 +6,12 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f0f9ff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
 
 .slide-container {
   width: 1280px;
@@ -277,10 +282,14 @@ h1 {
 }
 .navigation{
   justify-self: center;
-  width: 100%; display: flex; position:absolute; top: 60px; justify-content: space-between;
-  max-width: 1340px;
+  width: 100%; display: flex; position:absolute; top: 50%; justify-content: space-between;
 }
 .navigation span{
+  transition: opacity .4s ease-in;
+  opacity: 0.1;
   height: 60px; z-index: 999; aspect-ratio: 1; background: #0cf; border-radius: 100%; display: flex; align-items: center; justify-content: center; padding: 4px;
+}
+.navigation span:hover{
+  opacity: 1;
 }
 
